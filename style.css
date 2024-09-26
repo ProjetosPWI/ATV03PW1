@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    scroll-behavior: smooth;
+
+    user-select: none;
+}
+
+/* Navegação */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    backdrop-filter: blur(10px); 
+    z-index: 1000;
+}
+
+.nav-left .logo {
+    width: 20px;
+}
+
+.nav-right .icon {
+    width: 18px;
+    margin-left: 20px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.nav-right {
+    display: flex;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.introducao {
+    justify-content: space-around;
+    background: linear-gradient(to bottom, #1e008b, #0300a1, #004eb3a2, #fff, #eee);
+    text-align: center;
+    color: white; 
+}
+
+.introducao img {
+    margin-top: -10%;
+    width: 70%;
+}
+
+.introducao div {
+    bottom: 5%;
+}
+
+.introducao div > button {
+    padding: 10px 15px 10px 15px ;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(42, 127, 255);
+    color: #fff;
+    font-size: 17px;
+}
+
+.introducao div > p {
+    color: #000;
+}
+
+.introducao h1 {
+    margin-top: 20px;
+   font-size: 3rem;
+}
+
+.introducao p {
+   font-size: 1.2rem;
+   margin-top: 10px;
+}
+
+.recursos {
+   background: #eee
+}
+
+.grid-recursos {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 10px;
+   max-width: 900px;
+   width: 100%;
+}
+
+.recurso {
+   text-align: center;
+}
+
+.recurso img {
+   width: 50px; 
+}
+
+.animacao {
+   background-color: #eee; 
+}
+
+.animacao-cores {
+   width: 100px; 
+   height: 100px; 
+   margin-top: 20px; 
+   background-color: red; 
+   animation: mudarCor 3s infinite; 
+}
+
+@keyframes mudarCor {
+   0% { background-color: red; }
+   50% { background-color: blue; }
+   100% { background-color: green; }
+}
+
+.especificacoes {
+   background-color: #f9f9f9; 
+}
+
+.flex-especificacoes {
+   display: flex; 
+   justify-content: space-around; 
+   width: 80%; 
+}
+
+.coluna { 
+   text-align:center; 
+}
+
+.preco { 
+   background-color:#fff; 
+}
+
+.preco p { 
+   font-size :24px; 
+   color:#E53935; 
+}
+
+footer { 
+   background-color:#333; 
+   color:#fff; 
+   text-align:center; 
+   padding :10px; 
+}
+
+.redes-sociais {
+   margin-top:10px; 
+}
+
+.social-icon { 
+   width :25px; 
+   margin :0 5px; 
+}
+
+@media (max-width :768px) { 
+   .grid-recursos { grid-template-columns :1fr; } 
+
+   .flex-especificacoes { flex-direction :column ; align-items:center ; } 
+
+   .introducao img { width :100%; } 
+}
+
+@media (max-width :950px) {
+    .introducao img { width :90%; } 
+}
