@@ -25,3 +25,7 @@ Atividade: Criando um Website para Apresentar o Novo iPhone 16
 ## Contato
 
 Em caso de dúvidas ou sugestões, entre em contato pelo e-mail: ncormino@gmail.com.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE), permitindo que outros utilizem e modifiquem conforme necessário.
