@@ -45,7 +45,7 @@ section {
    justify-content: center;
    align-items: center;
    height: 100vh; 
-   padding: 20px;
+   padding: 3rem;
 }
 
 .introducao {
@@ -72,6 +72,7 @@ section {
    background-color: rgb(42, 127, 255);
    color: #fff;
    font-size: 17px;
+   cursor: pointer;
 }
 
 .introducao div > p {
@@ -89,105 +90,188 @@ section {
 }
 
 .recursos {
+   display: flex;
    background: #fff;
-   width: 100%;
+   height: 130vh;
    align-items: start;
    font-size: 2rem;
 }
 
 .recursos > h1 {
-   margin-bottom: 45px;
-   left: 0;
+   width: 80%;
+   line-height: 60px;
+   margin: 5rem 0 3rem 0;
 }
 
-.grid-recursos {
-   display: grid;
-   gap: 2%;
-   grid-template-columns: repeat(3, 1fr);
-   width: 100%;
-   height: 80%;
-   overflow: hidden;
-}
-
-.recurso {
+.carousel {
    display: flex;
+   overflow: hidden;
+   scroll-behavior: smooth;
+   width: 100%;
+}
+
+.carousel-item {
+   min-width: 100%;
+   transition: transform 0.5s ease-in-out;
+
+   display: flex;
+   flex-direction: column;
    justify-content: left;
    border-radius: 15px;
-   font-size: 1rem;
+   font-size: 1.5rem;
+   padding: 15rem 0 15rem 0;
 }
 
-.recurso > p {
+.carousel-item > p {
+   position: absolute;
+   text-align: left;
    margin: 5%;
    max-width: 50%;
+   top: 0;
+}
+
+.carousel-nav {
+   margin-top: 20px;
+}
+
+.carousel-dot {
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   margin: 0 5px;
+   background-color: #ccc;
+   border-radius: 50%;
+   cursor: pointer;
+}
+
+.carousel-dot.active {
+   background-color: #000;
 }
 
 #recurso-1
 {
    color: #000;
    background-image: url(./assets/highlights_camera_control_endfra.png);
-   background-repeat: round;
+   background-size: cover;
+   background-position: 0%;
 }
 
 #recurso-2
 {
    color: #fff;
    background-image: url(./assets/chip__fq1lz7wdahme_medium.png);
-   background-repeat: round;
+   background-size: cover;
+   background-position: 0%;
 }
 
 #recurso-3
 {
    color: #000;
    background-image: url(./assets/battery__b14ff4que1yq_medium.png);
-   background-repeat: round;
+   background-size: cover;
+   background-position: 50%;
 }
 
-.animacao {
+.produto-detalhado {
+   display: flex;
+   justify-content: baseline;
+   align-items: center;
    background-color: #fff; 
+   padding: 3rem;
+
+   height: 140vh;
 }
 
-.animacao-cores {
-   width: 100px; 
-   height: 100px; 
-   margin-top: 20px; 
-   background-color: red; 
-   animation: mudarCor 3s infinite; 
+.produto-detalhado > h1 {
+   align-self: baseline;
+   width: 80%;
+   line-height: 60px;
+   margin: 5rem 0 1rem 0;
+   font-size: 3rem;
 }
 
-@keyframes mudarCor {
-   0% { background-color: red; }
-   50% { background-color: blue; }
-   100% { background-color: green; }
+.imagem-especificacoes {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+}
+
+.imagem-produto img {
+   width: 100%;
+   margin-right: 20px;
+}
+
+#imagem-suave img {
+   opacity: 1;
+   transition: opacity 0.5s ease-in-out; 
+}
+
+#imagem-suave img.fade-out {
+   opacity: 0; 
+}
+
+#imagem-suave img.fade-in {
+   opacity: 1; 
 }
 
 .especificacoes {
-   background-color: #fff; 
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   min-height: 80%;
+   background-color: #eee;
+   padding: 1rem;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .flex-especificacoes {
-   display: flex; 
-   justify-content: space-around; 
-   width: 80%; 
+   display: flex;
+   justify-content: space-around;
 }
 
-.coluna { 
-   text-align:center; 
+.coluna {
+   text-align: left;
 }
 
-.preco { 
-   background-color:#fff; 
+.preco {
+   text-align: center;
+   background-color: #fff;
+   padding: 1rem;
+   border-radius: 10px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.preco p { 
-   font-size :24px; 
-   color:#E53935; 
+.preco h2 {
+   font-size: 2rem;
+}
+
+.preco p {
+   font-size: 24px;
+   color: #E53935;
+}
+
+/* Menu de cores */
+.menu-cores {
+   text-align: center;
+   margin-top: 20px;
+}
+
+.menu-cores .cores button {
+   padding: 10px 20px;
+   margin: 10px;
+   cursor: pointer;
+   border: none;
+   background-color: #ddd;
+   border-radius: 5px;
+   font-size: 16px;
 }
 
 footer { 
    background-color: rgb(245, 245, 247); 
    color: rgba(0, 0, 0, 0.56); 
-   text-align:center; 
-   padding :10px; 
+   text-align: center; 
+   padding: 10px; 
 }
 
 .redes-sociais {
@@ -195,18 +279,80 @@ footer {
 }
 
 .social-icon { 
-   width :25px; 
-   margin :0 5px; 
+   width: 25px; 
+   margin: 0 5px; 
 }
 
-@media (max-width :768px) { 
-   .grid-recursos { grid-template-columns :1fr; } 
-
-   .flex-especificacoes { flex-direction :column ; align-items:center ; } 
-
-   .introducao img { width :100%; } 
+.texto-animado {
+   opacity: 0;
+   transform: translateY(20px);
+   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-@media (max-width :950px) {
-    .introducao img { width :90%; } 
+.texto-aparecendo {
+   opacity: 1;
+   transform: translateY(0); 
+}
+
+@media (max-width: 768px) { 
+   .grid-recursos { 
+      grid-template-columns: 1fr; 
+   } 
+
+   .imagem-especificacoes { 
+      flex-direction: column; 
+      align-items: center; 
+   } 
+
+   .introducao img { 
+      width:100%; 
+   } 
+
+   .recursos > h1 { 
+      width: 40%; 
+      font-size: 2.5rem; 
+      line-height: 40px; 
+   }
+
+   .produto-detalhado > h1 {
+      font-size: 2.5rem; 
+   }
+
+   .produto-detalhado {
+      grid-template-columns: 1fr;
+      padding: 2rem;
+   }
+
+   .imagem-produto img {
+      width: 100%;
+      margin-left: 0;
+   }
+
+   .flex-especificacoes {
+      flex-direction: row;
+      justify-content: space-between;
+   }
+
+   .especificacoes {
+      width: 80%;
+      min-height: 0;
+   }
+
+   .preco h2 {
+      font-size: 1.8rem;
+   }
+
+   .preco p {
+      font-size: 20px;
+   }
+
+   footer {
+      margin-top: 20%;
+   }
+}
+
+@media (max-width: 950px) {
+    .introducao img { width: 90%; } 
+
+    .recursos > h1 { width: 60%; font-size: 2.5rem; line-height: 50px; }
 }

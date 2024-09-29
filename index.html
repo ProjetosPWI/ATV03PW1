@@ -7,7 +7,7 @@
     <title>iPhone 16 - Apresentação</title>
     <link rel="icon" href="./assets/icone-site.png" type="image/x-png">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +18,7 @@
         <div class="nav-left">
             <img src="./assets/apple-logo.png" alt="Apple Logo" class="logo">
         </div>
+
         <div class="nav-right">
             <img src="./assets/search-interface-symbol.png" alt="Ícone de pesquisa" class="icon">
             <img src="./assets/bag.png" alt="Ícone de sacola" class="icon">
@@ -26,65 +27,97 @@
     </nav>
 
     <section class="introducao">
-        <img src="./assets/iphone16.png" alt="Imagem do iPhone 16">
+        <img class="texto-animado" src="./assets/iphone16.png" alt="Imagem do iPhone 16">
+
         <div>
-            <button>Pré-Venda</button>
-            <p>Design inovador e performance incomparável</p>
+            <button class="texto-animado" id="scroll-button">Pré-Venda</button>
+            <p class="texto-animado">Design inovador e performance incomparável</p>
         </div>
     </section>
 
     <section class="recursos">
-        <h1>Comece pelos destaques.</h1>
-        <div class="grid-recursos">
-            <div class="recurso" id="recurso-1">
-                <p>Display OLED Super Retina</p>
+        <h1 class="texto-animado">Comece pelos destaques.</h1>
+        <div class="carousel">
+            <div class="carousel-item" id="recurso-1">
+                <p class="texto-animado">Controle da Câmera. Para fazer a foto perfeita, é só tirar o dedo da frente.</p>
             </div>
-            <div class="recurso" id="recurso-2">
-                <p>Câmera de 48MP</p>
+
+            <div class="carousel-item" id="recurso-2">
+                <p class="texto-animado">Um novo chip que dá superpoderes para o iPhone 16. E para você também.</p>
             </div>
-            <div class="recurso" id="recurso-3">
-                <p>Processador A18 Bionic</p>
+
+            <div class="carousel-item" id="recurso-3">
+                <p class="texto-animado">Um grande salto na bateria? Só se for agora.</p>
+            </div>
+        </div>
+
+        <div class="carousel-nav">
+            <span class="carousel-dot" data-slide="1"></span>
+            <span class="carousel-dot" data-slide="2"></span>
+            <span class="carousel-dot" data-slide="3"></span>
+        </div>
+    </section>
+
+    <section class="produto-detalhado">
+        <h1 class="texto-animado">Explore os detalhes.</h1>
+        
+        <div class="imagem-especificacoes">
+            <div class="imagem-produto" id="produto-imagem">
+                <img class="texto-animado" src="./assets/all_colors_of_iphone16.jpg" alt="iPhone 16 de todas as cores">
+            </div>
+
+            <div class="especificacoes texto-animado">
+                <h2>Especificações Técnicas</h2>
+                <div class="flex-especificacoes">
+                    <div class="coluna">
+                        <p><strong>Tela:</strong> 6.1 polegadas</p>
+                        <p><strong>Bateria:</strong> 18 horas de vídeo</p>
+                    </div>
+
+                    <div class="coluna">
+                        <p><strong>Armazenamento:</strong> 128GB, 256GB, 512GB</p>
+                        <p><strong>Processador:</strong> A18 Bionic</p>
+                    </div>
+                </div>
+
+                <div class="preco">
+                    <h2>A partir de</h2>
+                    <p>R$ 649,92/mês ou R$ 7.799*</p>
+                </div>
+
+                <div class="menu-cores">
+                    <h2>Escolha a cor:</h2>
+        
+                    <div class="cores">
+                        <button onclick="trocarImagem('black')">Preto</button>
+                        <button onclick="trocarImagem('white')">Branco</button>
+                        <button onclick="trocarImagem('pink')">Rosa</button>
+                        <br>
+                        <button onclick="trocarImagem('blue')">Azul</button>
+                        <button onclick="trocarImagem('green')">Verde</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="animacao">
-        <h2>Explore os detalhes.</h2>
-        <div class="animacao-cores"></div>
-    </section>
-
-    <section class="especificacoes">
-        <h2>Especificações Técnicas</h2>
-        <div class="flex-especificacoes">
-            <div class="coluna">
-                <p><strong>Tela:</strong> 6.1 polegadas</p>
-                <p><strong>Processador:</strong> A16 Bionic</p>
-            </div>
-            <div class="coluna">
-                <p><strong>Armazenamento:</strong> 128GB, 256GB, 512GB</p>
-                <p><strong>Bateria:</strong> 18 horas de vídeo</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="preco">
-        <h2>A partir de</h2>
-        <p>R$ 649,92/mês ou R$ 7.799*</p>
-    </section>
-
-    <footer>
+    <footer class="texto-animado">
         <p>Entre em contato: suporte@apple.com | Siga-nos nas redes sociais</p>
+
         <div class="redes-sociais">
             <a href="https://www.facebook.com/apple" target="_blank">
                 <img src="./assets/facebook (1).png" alt="Facebook" class="social-icon">
             </a>
+
             <a href="https://twitter.com/apple" target="_blank">
                 <img src="./assets/xa.png" alt="X" class="social-icon">
             </a>
+
             <a href="https://www.instagram.com/apple" target="_blank">
                 <img src="./assets/instagram.png" alt="Instagram" class="social-icon">
             </a>
         </div>
     </footer>
 </body>
+    <script src="./script.js"></script>
 </html>
